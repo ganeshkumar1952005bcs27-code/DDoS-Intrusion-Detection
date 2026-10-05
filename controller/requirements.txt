@@ -1,0 +1,8 @@
+# Ryu is old and can fail to build against modern setuptools; if
+# `pip install -r requirements.txt` errors out with an
+# easy_install/setuptools error, use a dedicated Python 3.8-3.9
+# virtualenv, or:
+#   pip install "setuptools<58" ryu eventlet==0.30.2 webob
+ryu
+eventlet==0.30.2
+webob

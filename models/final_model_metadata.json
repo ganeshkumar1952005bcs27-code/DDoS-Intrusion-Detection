@@ -1,0 +1,15 @@
+{
+    "dataset": "IoTID20",
+    "original_features": 79,
+    "pca_components": 10,
+    "variance_retained_percent": 75.46844805017712,
+    "accuracy_percent": 99.72594421406713,
+    "precision_percent": 99.82254830866357,
+    "recall_percent": 99.88475525430674,
+    "f1_percent": 99.85364209304608,
+    "tree_depth": 34,
+    "tree_nodes": 3257,
+    "leaf_nodes": 1629,
+    "training_time_seconds": 28.66575590003049,
+    "inference_microseconds_per_sample": 0.6169227448420952
+}

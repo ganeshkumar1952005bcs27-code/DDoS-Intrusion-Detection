@@ -1,0 +1,2 @@
+dataset,original_features,pca_components,variance_retained_percent,accuracy_percent,precision_percent,recall_percent,f1_percent,tree_depth,tree_nodes,leaf_nodes,training_time_seconds,inference_microseconds_per_sample
+IoTID20,79,10,75.46844805017712,99.72594421406713,99.82254830866357,99.88475525430674,99.85364209304608,34,3257,1629,28.66575590003049,0.6169227448420952

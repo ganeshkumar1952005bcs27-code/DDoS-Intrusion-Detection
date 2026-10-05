@@ -1,0 +1,44 @@
+{
+  "dataset": {
+    "csv_path": "data/IoTID20.csv",
+    "_comment": "If csv_path does not exist, ml/dataset.py falls back to a synthetic stand-in so the pipeline still runs end-to-end."
+  },
+  "pca": {
+    "variance_tolerance": 0.01,
+    "_comment": "Algorithm 2: keeps the smallest Fm such that >= (1 - variance_tolerance) of variance is retained."
+  },
+  "model": {
+    "max_tree_depth": null,
+    "test_size": 0.25,
+    "random_state": 42,
+    "class_weight": null
+  },
+  "edge_node": {
+    "mode": "software",
+    "_comment_mode": "'hardware' = real ESP32 running esp32/esp32_tinyml_ids.ino; 'software' = scripts/simulate_edge_node.py runs the same model on your PC and posts alerts the same way the ESP32 would. Both modes talk to the SAME controller REST API below.",
+    "device_id": "edge-sensor-01",
+    "sample_interval_seconds": 2,
+    "wifi_ssid": "YOUR_WIFI_SSID",
+    "wifi_password": "YOUR_WIFI_PASSWORD"
+  },
+  "controller": {
+    "host": "0.0.0.0",
+    "port": 8080,
+    "alert_url": "http://192.168.1.10:8080/api/alert",
+    "_comment_alert_url": "Used by BOTH esp32_tinyml_ids.ino (edit the matching constant there, since the ESP32 cannot read this JSON file) and simulate_edge_node.py (reads this file directly).",
+    "packetin_window_seconds": 5,
+    "packetin_rate_threshold": 30,
+    "block_idle_timeout_seconds": 60,
+    "block_priority": 100
+  },
+  "network": {
+    "controller_ip": "127.0.0.1",
+    "controller_port": 6653,
+    "hosts": [
+      "10.0.0.1",
+      "10.0.0.2",
+      "10.0.0.3"
+    ],
+    "attacker_ip": "10.0.0.5"
+  }
+}
